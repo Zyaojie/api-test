@@ -10,23 +10,26 @@ class SendRequests(object):
     def __init__(self):
         pass
 
-    def get(self, url, data, header):
-        '''
-        封装get请求
+        def get(self, url, data, header):
+            '''
+            封装get请求
         :param url: 请求地址
         :param data: 请求参数
         :param header: 请求头
         :return:
-        '''
-        if header is None:
-            res = requests.get(url=url, params=data)
-        else:
-            res = requests.get(url=url, params=data, headers=header)
-        return res.json()
+
+            '''
+
+            if header is None:
+                res = requests.get(url=url, params=data)
+                #get请求允许关键字传参，因为GET请求的参数必须附加在 URL 末尾
+            else:
+                res = requests.get(url=url, params=data, headers=header)
+            return res.json()
 
     def post(self, url, data, header):
         """
-        封装post请求
+        封装post请求()
         :param url: 请求地址
         :param data: 请求参数
         :param header: 请求头
@@ -34,6 +37,7 @@ class SendRequests(object):
         """
         if header is None:
             res = requests.post(url, data, verify=False)
+            #post请求使用形参传参，因为POST 请求的参数可以放在 请求体（Body） 中，且支持多种格式（如表单、JSON、二进制等）
         else:
             res = requests.post(url, data, headers=header, verify=False)
         return res.json()
@@ -56,6 +60,8 @@ class SendRequests(object):
         res = None
         if method.upper() == 'GET':
             res = self.get(url, data, header)
+            #相当于直接调用该类中的get请求 起到的作用是一处定义多处使用，修改是只需要修改该类中的get
+            #（调用当前类里的方法写法self.类名，两种情况不需要一个是静态方法，一个是类方法）
         elif method.upper() == 'POST':
             res = self.post(url, data, header)
         else:
