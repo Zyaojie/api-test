@@ -60,7 +60,7 @@ class SendRequests(object):
         res = None
         if method.upper() == 'GET':
             res = self.get(url, data, header)
-            #相当于直接调用该类中的get请求 起到的作用是一处定义多处使用，修改是只需要修改该类中的get
+            #相当于直接调用该类中的get请求 好处是一处定义多处使用，修改是只需要修改该类中的get方法
             #（调用当前类里的方法写法self.类名，两种情况不需要一个是静态方法，一个是类方法）
         elif method.upper() == 'POST':
             res = self.post(url, data, header)
