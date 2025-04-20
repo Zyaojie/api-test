@@ -6,7 +6,7 @@
       Content-Type': application/x-www-form-urlencoded;charset=UTF-8
       token: ${get_extract_data(cookie,session)}
   testCase:
-    - case_name: 用 户名和密码正确登录
+    - case_name: 用户名和密码正确登录
       data:
         user_name: test01
         passwd: admin123
