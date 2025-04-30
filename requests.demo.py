@@ -17,12 +17,13 @@ data = {
 
 res = requests.post(url=url,data=data)
 
-
+#获取cookie
 
 session = requests.session()
+#访问接口请求
+result = session.request(method='post',url=url,data=data)#访问接口请求
 
-result = session.request(method='post',url=url,data=data)
-
+#使用requests中的utils方法来获取cookie
 cookie = requests.utils.dict_from_cookiejar(result.cookies)
 
 print(cookie)

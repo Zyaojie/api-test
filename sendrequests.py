@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+'''
+@Author      : Zyaojie
+@File        : sendrequests.py
+@Created     : 2025/4/16 15:08
+@Description : 
+'''
 import requests
 import json
 
@@ -57,7 +64,6 @@ class SendRequests(object):
         :param method: 请求方法
         :return:
         '''
-        res = None
         if method.upper() == 'GET':
             res = self.get(url, data, header)
             #相当于直接调用该类中的get请求 好处是一处定义多处使用，修改是只需要修改该类中的get方法
