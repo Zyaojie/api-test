@@ -3,13 +3,13 @@
     url: /dar/user/login
     method: post
     header:
-      Content-Type': application/x-www-form-urlencoded;charset=UTF-8
-      token: ${get_extract_data(cookie,session)}
+      Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+      token: ${get_extract_data(token)}
   testCase:
     - case_name: 用户名和密码正确登录
       data:
         user_name: test01
-        passwd: admin123
+        passwd: ${md5_params('admin123')}
       validation:
         - contains: {'msg': '成功'}
         - contains: {'status_code': 200}
