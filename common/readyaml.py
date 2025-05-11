@@ -7,7 +7,7 @@ import os.path
 
 import yaml
 from conf.setting import FILE_PATH
-
+from common.sendrequests import SendRequests
 
 # get_testcase_yaml方法解析需传入一个文件路径 根据所传的文件路径打开并读取该文件数据
 # 定义读取YAML测试用例文件的函数

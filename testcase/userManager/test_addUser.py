@@ -5,16 +5,16 @@
 # @Project : apitest
 import pytest
 
-class TestAddUser:
+# class TestAddUser:
 
 
-    def test_case01(self):
-
-        print('新增用户')
-
-
-    def test_case02(self):
-        print('删除用户')
-
-    def test_case03(self):
-        print('修改用户')
+    # def test_case01(self):
+    #
+    #     print('新增用户')
+    #
+    #
+    # def test_case02(self):
+    #     print('删除用户')
+    #
+    # def test_case03(self):
+    #     print('修改用户')
