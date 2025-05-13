@@ -18,5 +18,6 @@ STREAM_LOG_LEVEL = logging.DEBUG  #日志输出至控制台
 #文件路径
 FILE_PATH = {
     'extract' : os.path.join(DIR_PATH,'extract.yaml'),
-    'conf' : os.path.join(DIR_PATH,'conf','config.ini')
+    'conf' : os.path.join(DIR_PATH,'conf','config.ini'),
+    'Log' : os.path.join(DIR_PATH,'log'),
 }
