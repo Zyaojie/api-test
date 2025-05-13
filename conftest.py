@@ -6,7 +6,7 @@
 @Description : 
 '''
 import pytest
-
+from common.recordlog import logs
 '''
 -function: 每一个函数和方法都会执行一次
 -class: 每一个类调用一次，一个类中可以有多个方法
@@ -23,6 +23,6 @@ else:
 # scope:作用域，params:参数化，autouse:自动使用，ids:自定义ID，name:名称
 def fixture_test(request):
     '''前后置处理'''
-    print('--------------------接口测试开始--------------------')
+    logs.info('--------------------接口测试开始--------------------')
     yield
-    print('--------------------接口测试结束--------------------')
+    logs.info('--------------------接口测试结束--------------------')
